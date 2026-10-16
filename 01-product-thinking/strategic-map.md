@@ -5,3 +5,14 @@
 - **Write one feature that looks “correct” for the app but has zero strategic weight, you have no idea if it helps the company make money or whether a single user actually asked for it.:** Daily hydration tips seem useful, but there's no evidence they address a significant customer need or improve user engagement and retention. Without validating their impact, I can't justify prioritizing this feature over others that directly solve the user's problem.
 - **Compare V3 to your Step 1 baseline. What changed, and is the output objectively better, did the AI get smarter, or did your added PM knowledge (JTBD, effort/impact, retention) force it to be useful?:** V1 focused mainly on generating features for the water-tracking app, while V3 took a more strategic approach by considering customer needs, business goals, development effort, and retention risks. The difference shows that AI can generate ideas, but a Product Manager must provide the context and direction to make those ideas valuable and actionable.
 - **Key takeaway: how does this prove the PM’s role is to think while the AI’s role is to execute?:** AI can generate and organize ideas, but the Product Manager determines which ideas solve real customer problems, align with business goals, and deserve development resources.
+
+## Mindmap Screenshots
+
+### V1: Initial Mindmap
+![V1 Mindmap](water_intake_app_true_mindmap%201.png)
+
+### V2: Structured Mindmap
+![V2 Mindmap](water_tracking_app_mindmap%202.png)
+
+### V3: Strategic Mindmap
+![V3 Mindmap](water_tracking_app_mindmap_tree%203.png)
