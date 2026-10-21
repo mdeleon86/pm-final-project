@@ -1,0 +1,172 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Velocity Driver Journey</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: the journey drawn as a delivery route, four stops on one line; stacks to a vertical route on phones */
+:root {
+  --bg: #f2f4f6;
+  --surface: #ffffff;
+  --ink: #17202b;
+  --muted: #5a6573;
+  --line: #d5dbe2;
+  --route: #0b6e99;
+  --route-soft: #e1eef5;
+  --pain: #a4561c;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12171d; --surface: #1a2129; --ink: #e6ebf0; --muted: #9aa6b3;
+    --line: #2c3641; --route: #4fb3e0; --route-soft: #17303d; --pain: #e39a5f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12171d; --surface: #1a2129; --ink: #e6ebf0; --muted: #9aa6b3;
+  --line: #2c3641; --route: #4fb3e0; --route-soft: #17303d; --pain: #e39a5f;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 15px; line-height: 1.45;
+}
+.wrap {
+  max-width: 1180px; margin: 0 auto;
+  padding-block: 32px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 28px;
+}
+.eyebrow {
+  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--muted);
+}
+h1 {
+  font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4.4vw, 44px);
+  line-height: 1.02; margin: 6px 0 10px; text-wrap: balance; letter-spacing: .005em;
+}
+.brief { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 24px; }
+.brief div { min-width: 0; }
+.brief dt { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--route); }
+.brief dd { margin: 2px 0 0; color: var(--ink); }
+
+/* Route timeline */
+.route { list-style: none; margin: 0; padding: 0; position: relative;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.route::before {
+  content: ""; position: absolute; left: 12.5%; right: 12.5%; top: 17px;
+  border-top: 3px dashed var(--route);
+}
+.stop { position: relative; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.pin {
+  justify-self: center; width: 37px; height: 37px; border-radius: 50%;
+  background: var(--route); color: var(--surface);
+  font-family: var(--font-display); font-weight: 700; font-size: 20px;
+  display: grid; place-items: center; position: relative;
+  box-shadow: 0 0 0 5px var(--bg);
+}
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+  padding: 16px; display: grid; gap: 12px; height: 100%;
+}
+.card h2 {
+  font-family: var(--font-display); font-weight: 700; font-size: 24px; line-height: 1.05;
+  margin: 2px 0 0; text-wrap: balance;
+}
+.field { display: grid; gap: 3px; }
+.field h3 {
+  margin: 0; font-family: var(--font-mono); font-weight: 500; font-size: 11px;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+}
+.field p { margin: 0; }
+.arrow { color: var(--route); font-weight: 600; }
+.field.pain h3 { color: var(--pain); }
+.field.pain { border-top: 1px solid var(--line); padding-top: 10px; }
+.refs { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+
+/* Advantages */
+.adv h2 { font-family: var(--font-display); font-weight: 700; font-size: 26px; margin: 4px 0 12px; }
+.adv ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.adv li { min-width: 0; border-left: 3px solid var(--route); background: var(--route-soft); padding: 12px 14px; border-radius: 0 6px 6px 0; }
+.adv strong { display: block; font-family: var(--font-display); font-size: 19px; font-weight: 600; margin-bottom: 2px; }
+.adv p { margin: 0; }
+footer { color: var(--muted); font-size: 12.5px; }
+
+@media (max-width: 860px) {
+  .brief, .adv ol { grid-template-columns: minmax(0, 1fr); }
+  .route { grid-template-columns: minmax(0, 1fr); gap: 18px; padding-left: 52px; }
+  .route::before { left: 17px; right: auto; top: 18px; bottom: 18px; border-top: 0; border-left: 3px dashed var(--route); }
+  .pin { position: absolute; left: -52px; top: 0; }
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">RouteLogic Velocity · Future State Journey</div>
+    <h1>One route, one platform: the driver's day without workarounds</h1>
+    <dl class="brief">
+      <div><dt>Persona</dt><dd>Frontline delivery driver completing multiple stops daily.</dd></div>
+      <div><dt>Goal</dt><dd>Complete deliveries quickly and accurately, on schedule, using one reliable platform.</dd></div>
+      <div><dt>Strategy</dt><dd>Reclaim operational simplicity: strip legacy noise, make everyday work fastest.</dd></div>
+    </dl>
+  </header>
+
+  <ol class="route" aria-label="Four-stage future state journey">
+    <li class="stop">
+      <div class="pin" aria-hidden="true">1</div>
+      <div class="card">
+        <div><div class="eyebrow">Depot · Shift start</div><h2>Start the Shift</h2></div>
+        <div class="field"><h3>User action</h3><p>Taps one "Start Route" button on a clean home screen <span class="arrow">→</span> route live instantly.</p></div>
+        <div class="field"><h3>Internal state</h3><p>Sees every stop saved on the device <span class="arrow">→</span> confident, leaves the paper manifest behind.</p></div>
+        <div class="field pain"><h3>Pain point addressed</h3><p>Ends menu hunting and paper backups <span class="arrow">→</span> faster departures on a single system.</p><span class="refs">BUG-2079 · UXR-11 · UXR-12</span></div>
+      </div>
+    </li>
+    <li class="stop">
+      <div class="pin" aria-hidden="true">2</div>
+      <div class="card">
+        <div><div class="eyebrow">On the road</div><h2>Drive the Route</h2></div>
+        <div class="field"><h3>User action</h3><p>Follows one route screen; dispatch changes arrive as push alerts <span class="arrow">→</span> no wrong turns.</p></div>
+        <div class="field"><h3>Internal state</h3><p>Trusts the screen matches dispatch <span class="arrow">→</span> stops second-guessing and calling the office.</p></div>
+        <div class="field pain"><h3>Pain point addressed</h3><p>Removes stale routes and check-in texts <span class="arrow">→</span> driver stays on schedule.</p><span class="refs">BUG-2044 · UXR-02</span></div>
+      </div>
+    </li>
+    <li class="stop">
+      <div class="pin" aria-hidden="true">3</div>
+      <div class="card">
+        <div><div class="eyebrow">Doorstep</div><h2>Complete the Stop</h2></div>
+        <div class="field"><h3>User action</h3><p>Taps once to mark delivered and snap proof photo <span class="arrow">→</span> stop closed in seconds.</p></div>
+        <div class="field"><h3>Internal state</h3><p>Sees a clear "Saved" confirmation <span class="arrow">→</span> moves on without retakes or doubt.</p></div>
+        <div class="field pain"><h3>Pain point addressed</h3><p>Replaces the 3-tap, 3-screen flow and texting dispatch <span class="arrow">→</span> one-handed completion.</p><span class="refs">BUG-2055 · BUG-2061 · UXR-01 · UXR-07</span></div>
+      </div>
+    </li>
+    <li class="stop">
+      <div class="pin" aria-hidden="true">4</div>
+      <div class="card">
+        <div><div class="eyebrow">Exceptions · Shift end</div><h2>Close Out the Day</h2></div>
+        <div class="field"><h3>User action</h3><p>Reports a failed delivery from a visible button <span class="arrow">→</span> exception logged, no phone call.</p></div>
+        <div class="field"><h3>Internal state</h3><p>Knows dispatch already sees every update <span class="arrow">→</span> ends shift with nothing to reconcile.</p></div>
+        <div class="field pain"><h3>Pain point addressed</h3><p>Ends hidden help and end-of-day paper reconciliation <span class="arrow">→</span> clean, trusted delivery records.</p><span class="refs">BUG-2090 · UXR-08 · UXR-09</span></div>
+      </div>
+    </li>
+  </ol>
+
+  <section class="adv">
+    <div class="eyebrow">Versus texting dispatch and paper backups</div>
+    <h2>Competitive advantages over the manual workaround</h2>
+    <ol>
+      <li><strong>One tap beats a text</strong><p>Confirming a delivery takes seconds, with no texting and no dispatcher re-entry.</p></li>
+      <li><strong>Live, not static</strong><p>Route changes reach the driver instantly. Paper and screenshots can't update.</p></li>
+      <li><strong>A record you can trust</strong><p>Every stop, photo and exception lands in-platform, feeding the reporting enterprises buy.</p></li>
+    </ol>
+  </section>
+
+  <footer>Grounded in the RouteLogic user interviews (UXR) and bug reports (BUG) synthesized in the Product Health &amp; Insights Summary.</footer>
+</div>
+
+</body></html>
