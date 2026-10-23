@@ -1,23 +1,42 @@
-# Roadmap, PRD & Prototype
+# Feature Roadmap, Module 4 · RouteLogic Velocity
 
-> **Module 4 · ★ Deliverable 4.** Repo file `04-roadmap/roadmap-prd-prototype.md` — part of your submission.
-> Do the lab in the **Module 4 · Exercise 1 Guide** (linked from the Module 4 deck), then click **⬇ Download .md** — it saves as this exact file. Commit it here.
-> It becomes the **Roadmap, PRD & Prototype** slide of your Module 6 final deck. (Your Module 4 · Exercise 2 PRD sprint lands in `prd-and-prototype.md`.)
+**Team:** 2 engineers + 1 designer + 1 CS lead
 
-## High-level product roadmap
+## Strategic anchors
+- **Persona:** Dispatch coordinator, reflecting our Module 3 pivot
+- **Primary metric:** Compliance-check completion: 48% baseline → 60% proposed target
+- **Moment of misery:** Dispatch coordinators spend 14.6 minutes completing compliance checks against a 3-minute benchmark, and only 48% reach completion. The specific causes of this friction still require qualitative validation.
+- **Guardrail:** Compliance accuracy must not decline
 
-_Future direction, key milestones, and phased execution over time._
+## Scoring
+| Feature | Value | Effort | Quadrant | Decision | Rationale |
+|---|---|---|---|---|---|
+| B1 One-Click Compliance Checklist | 5 | 5 | Major Project | Next | High potential to improve compliance completion, but prefilled forms may require complex data integration, validation, and compliance safeguards. |
+| B2 Smart Daily Report Auto-Fill | 4 | 4 | Major Project | Next | High potential to improve daily reporting efficiency, with only 18% reaching report completion and a 9.7-minute task time versus a 3-minute benchmark. However, AI integration and data accuracy requirements increase implementation effort, and the feature does not directly address our primary compliance-check metric. |
+| B3 Shift Handoff Wizard | 4 | 3 | Major Project | Next | Shift handoffs take 11.3 minutes versus a 4.5-minute benchmark, indicating significant efficiency improvement potential. A guided wizard could reduce friction, but it does not directly target our primary compliance-check completion metric. Prioritize after compliance improvements and daily reporting, pending validation of coordinator needs and engineering effort. |
+| B4 Mobile-First Coordinator Dashboard | 4 | 5 | Major Project | Next | A consolidated mobile dashboard could reduce navigation friction across coordinator workflows and improve accessibility. However, coordinator-specific usability research has not established mobile access or navigation as the primary cause of low compliance completion. A broad dashboard redesign also carries substantial implementation effort. Defer until targeted workflow testing validates the need. |
+| B5 Step Progress Indicator | 4 | 2 | Quick Win | Now | Only 48% of coordinators reach compliance-check completion, indicating a significant workflow bottleneck. A step progress indicator offers a relatively low-effort way to improve workflow visibility and test whether clearer guidance increases completion. Prioritize for the initial pilot, while validating whether navigation uncertainty actually contributes to abandonment. |
+| B6 Driver Alert Notifications | 3 | 3 | Time Sinker | Cut | Driver alerts could improve communication around route changes and compliance issues, potentially reducing manual dispatcher coordination. However, the available evidence does not establish missed notifications as a major cause of coordinator workflow abandonment or enterprise churn. Defer until user research confirms the need and its business impact relative to higher-priority compliance improvements. |
+| B7 Contextual AI ETA Display | 3 | 2 | Fill-In | Later | Current AI ETA adoption is only 11%, suggesting an opportunity to improve feature discoverability and usage. Displaying predictions directly within existing workflows could increase adoption with relatively limited interface changes. However, low adoption does not establish user demand, and this feature does not directly address the primary compliance-check completion metric. Defer until research validates its usefulness and business impact. |
+| B8 Fleet Analytics Manager View | 3 | 4 | Time Sinker | Cut | Fleet analytics could improve management visibility and support enterprise account value, but current evidence does not establish a significant unmet need for additional executive reporting. Building a drill-down dashboard would require substantial development effort without directly improving coordinator compliance-check completion. Defer until customer research demonstrates measurable demand and business impact. |
+| B9 Compliance Audit Trail Export | 4 | 3 | Major Project | Next | Compliance audit exports could reduce manual record preparation, improve audit readiness, and strengthen enterprise customer value. However, the current evidence does not establish audit preparation as a primary source of coordinator frustration or churn. Prioritize after validating the core compliance-check workflow, with additional research into customer demand, regulatory requirements, and data accuracy safeguards. |
+| B10 In-App Coordinator Training | 3 | 2 | Fill-In | Later | In-app training could help new dispatch coordinators learn complex workflows and reduce reliance on external support. However, current evidence does not establish insufficient training as the primary cause of low compliance-check completion. Prioritize simplifying the workflow itself before adding instructional layers. Revisit training if usability testing identifies knowledge gaps that persist after simplification. |
 
-_____
+## Roadmap
+### NOW, Pilot (4 weeks, 3 accounts)
+- **B5 Step Progress Indicator**, Only 48% of coordinators reach compliance-check completion, indicating a significant workflow bottleneck. A step progress indicator offers a relatively low-effort way to improve workflow visibility and test whether clearer guidance increases completion. Prioritize for the initial pilot, while validating whether navigation uncertainty actually contributes to abandonment.
 
-## PRD snippets
+### NEXT, GA Release (weeks 5-8)
+- **B1 One-Click Compliance Checklist**, High potential to improve compliance completion, but prefilled forms may require complex data integration, validation, and compliance safeguards.
+- **B2 Smart Daily Report Auto-Fill**, High potential to improve daily reporting efficiency, with only 18% reaching report completion and a 9.7-minute task time versus a 3-minute benchmark. However, AI integration and data accuracy requirements increase implementation effort, and the feature does not directly address our primary compliance-check metric.
+- **B3 Shift Handoff Wizard**, Shift handoffs take 11.3 minutes versus a 4.5-minute benchmark, indicating significant efficiency improvement potential. A guided wizard could reduce friction, but it does not directly target our primary compliance-check completion metric. Prioritize after compliance improvements and daily reporting, pending validation of coordinator needs and engineering effort.
+- **B4 Mobile-First Coordinator Dashboard**, A consolidated mobile dashboard could reduce navigation friction across coordinator workflows and improve accessibility. However, coordinator-specific usability research has not established mobile access or navigation as the primary cause of low compliance completion. A broad dashboard redesign also carries substantial implementation effort. Defer until targeted workflow testing validates the need.
+- **B9 Compliance Audit Trail Export**, Compliance audit exports could reduce manual record preparation, improve audit readiness, and strengthen enterprise customer value. However, the current evidence does not establish audit preparation as a primary source of coordinator frustration or churn. Prioritize after validating the core compliance-check workflow, with additional research into customer demand, regulatory requirements, and data accuracy safeguards.
 
-_The key elements of your simplified PRD._
+### LATER, backlog
+- **B7 Contextual AI ETA Display**, Current AI ETA adoption is only 11%, suggesting an opportunity to improve feature discoverability and usage. Displaying predictions directly within existing workflows could increase adoption with relatively limited interface changes. However, low adoption does not establish user demand, and this feature does not directly address the primary compliance-check completion metric. Defer until research validates its usefulness and business impact.
+- **B10 In-App Coordinator Training**, In-app training could help new dispatch coordinators learn complex workflows and reduce reliance on external support. However, current evidence does not establish insufficient training as the primary cause of low compliance-check completion. Prioritize simplifying the workflow itself before adding instructional layers. Revisit training if usability testing identifies knowledge gaps that persist after simplification.
 
-_____
-
-## Wireframes / prototype
-
-_A visual or interactive model of your proposed solution._
-
-_[screenshot or link to your prototype]_
+### ✂ Cut List
+- **B6 Driver Alert Notifications**, Driver alerts could improve communication around route changes and compliance issues, potentially reducing manual dispatcher coordination. However, the available evidence does not establish missed notifications as a major cause of coordinator workflow abandonment or enterprise churn. Defer until user research confirms the need and its business impact relative to higher-priority compliance improvements.
+- **B8 Fleet Analytics Manager View**, Fleet analytics could improve management visibility and support enterprise account value, but current evidence does not establish a significant unmet need for additional executive reporting. Building a drill-down dashboard would require substantial development effort without directly improving coordinator compliance-check completion. Defer until customer research demonstrates measurable demand and business impact.
