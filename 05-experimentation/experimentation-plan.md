@@ -1,19 +1,21 @@
-A/B Experiment Brief, RouteLogic (B2B)
-Parameters
-Parameter	Decision
-Feature under test	Step Progress Indicator for dispatch coordinator compliance checks
-Persona	Dispatch coordinators responsible for completing compliance checks and managing daily delivery operations.
-Expected outcome	Higher compliance-check completion rates
-Primary success metric	Compliance-check completion rate (% of eligible coordinator compliance checks successfully completed).
-Baseline rate	48%
-Guardrail metric	Compliance accuracy (percentage of completed compliance checks that satisfy all required validation rules).
-Guardrail boundary	No decline in compliance accuracy relative to control (0 percentage-point permitted decrease); no invalid submissions accepted
-Second guardrail	None selected
-Minimum Detectable Effect	12 percentage points
-Sample size per arm	270
-Traffic split	50/50
-Test duration	14 days
-Significance threshold	p < 0.05
+# A/B Experiment Brief, RouteLogic (B2B)
+
+## Parameters
+
+| Parameter | Decision |
+|---|---|
+| Feature under test | Step Progress Indicator for dispatch coordinator compliance checks |
+| Persona | Dispatch coordinators responsible for completing compliance checks and managing daily delivery operations. |
+| Expected outcome | Higher compliance-check completion rates |
+| Primary success metric | Compliance-check completion rate (% of eligible coordinator compliance checks successfully completed). |
+| Baseline rate | 48% |
+| Guardrail metric | Compliance accuracy |
+| Guardrail boundary | No decline relative to control (0 percentage-point decrease allowed); no invalid submissions accepted |
+| Minimum Detectable Effect | 12 percentage points |
+| Sample size per arm | 270 |
+| Traffic split | 50/50 |
+| Test duration | 14 days |
+| Significance threshold | p < 0.05 |
 
 
 Control vs. Variant
