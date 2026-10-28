@@ -18,14 +18,14 @@
 | Significance threshold | p < 0.05 |
 
 
-Control vs. Variant
+## Control vs. Variant
 - Control (A): Dispatch coordinators use the existing RouteLogic compliance-check workflow without a Step Progress Indicator. They must navigate the current process without a visual display of completed, current, and remaining steps. Existing required fields, validation rules, and submission behavior remain unchanged.
 - Variant (B): Dispatch coordinators use the existing compliance-check workflow with one added feature: the Step Progress Indicator. It visually displays completed, current, and remaining required steps and updates automatically as each step is completed. All existing required fields, validation rules, and submission behavior remain unchanged.
 - Held constant (isolation check): Both groups use the same RouteLogic application, compliance-check steps, required fields, validation rules, submission process, and completion confirmation. User permissions, notifications, onboarding, and access to existing features remain identical. The only difference is that Variant B displays the Step Progress Indicator.
-Hypothesis
+## Hypothesis
 I believe adding a Step Progress Indicator to the existing compliance-check workflow for dispatch coordinators will increase compliance-check completion by making completed, current, and remaining steps visible. We aim to improve the completion rate from the observed 48% baseline to at least 60%, a proposed 12-percentage-point increase, during a 14-day experiment. Compliance accuracy must not decline relative to the control group, and invalid submissions must remain blocked.
 
-Shipping criteria
+## Shipping Criteria
 - Ship: The variant demonstrates an improvement of at least 12 percentage points versus the control group, with p < 0.05, while compliance accuracy does not decline and no invalid submissions are accepted. Confirm the planned sample size and valid randomization before interpreting the result.
 - Iterate: Results suggest a positive effect, but the lift is below 12 percentage points or evidence is inconclusive, with no safety violation. Investigate what to improve and test again; do not treat this as a confirmed win.
 - Kill: The feature shows no useful improvement or a negative effect after a sufficiently powered, valid experiment. Do not equate a nonsignificant result from an underpowered test with proof of no effect.
