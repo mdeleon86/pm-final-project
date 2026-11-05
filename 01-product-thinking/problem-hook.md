@@ -12,7 +12,7 @@ Users are forced to spend extra time navigating RouteLogic's complex platform to
 RouteLogic's complex platform makes everyday tasks harder for users, reducing operational efficiency and putting enterprise customer retention at risk as simpler competitors become more attractive.
 
 ## Value proposition
-For Frontline coordinators, we will Easier software and improved efficiency. because Enterprise customer retention and competitive position are at risk..
+For Frontline coordinators, we will Make RouteLogic easier to use and improve operational efficiency because Enterprise customer retention and competitive position are at risk.
 
 ## Cold-read self-review
 The problem is important because RouteLogic's software complexity affects frontline coordinators and puts enterprise customer retention at risk. Improving usability would address the core user challenge while supporting RouteLogic's business goals.
